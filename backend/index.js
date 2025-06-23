@@ -4,7 +4,9 @@ const cors = require('cors');
 require('dotenv').config();
 
 const app = express();
-app.use(cors({ origin: 'http://localhost:3000' }));
+app.use(cors({
+  origin: ['http://localhost:3000', 'https://nasa-apod-explorer-green.vercel.app']
+}));
 
 const PORT = process.env.PORT || 5000;
 
