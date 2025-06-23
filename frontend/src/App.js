@@ -8,7 +8,7 @@ function App() {
 
   const fetchData = (date = '') => {
     setLoading(true);
-    let url = 'http://localhost:5000/api/apod';
+    let url = 'https://nasa-apod-explorer-o7hp.onrender.com/api/apod';
     if (date) {
       url += `?date=${date}`;
     }
