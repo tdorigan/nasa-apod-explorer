@@ -48,8 +48,7 @@ function App() {
   return (
     <div className="App">
       <h1>{apod.title}</h1>
-      <p>{apod.date}</p>
-
+      
       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: '1rem' }}>
 		  <label htmlFor="date">Select a date:</label>
 		  <input
