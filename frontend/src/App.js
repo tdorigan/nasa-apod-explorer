@@ -59,6 +59,7 @@ function App() {
 			type="date"
 			value={selectedDate}
 			onChange={handleDateChange}
+			min="1995-06-16" //cant select date before APOD existed
 			max={new Date().toISOString().split("T")[0]}
 			style={{ marginTop: '0.3rem' }}
 		  />
