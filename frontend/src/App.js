@@ -5,6 +5,8 @@ function App() {
   const [apod, setApod] = useState(null);
   const [loading, setLoading] = useState(true);
   const [selectedDate, setSelectedDate] = useState('');
+  
+  const [showModal, setShowModal] = useState(false);
 
   const fetchData = (date = '') => {
     setLoading(true);
@@ -66,7 +68,14 @@ function App() {
 		</div>
 
       {apod.media_type === 'image' ? (
-		  <img src={apod.url} alt={apod.title} />
+		  
+		  <img
+		    src={apod.url}
+		    alt={apod.title}
+		    onClick={() => setShowModal(true)}
+		    style={{ cursor: 'pointer' }}
+		  />
+		  
 		) : apod.media_type === 'video' ? (
 		  <div style={{ marginTop: '1rem' }}>
 			<iframe
@@ -91,6 +100,37 @@ function App() {
 		)}
 
       <p>{apod.explanation}</p>
+	  
+	  {showModal && apod.hdurl && (
+      <div
+        onClick={() => setShowModal(false)}
+        style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          width: '100vw',
+          height: '100vh',
+          backgroundColor: 'rgba(0, 0, 0, 0.9)',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          zIndex: 9999,
+          cursor: 'zoom-out'
+        }}
+      >
+        <img
+          src={apod.hdurl}
+          alt="HD APOD"
+          style={{
+            maxWidth: '90%',
+            maxHeight: '90%',
+            borderRadius: '10px',
+            boxShadow: '0 0 20px rgba(255, 255, 255, 0.2)'
+          }}
+        />
+      </div>
+    )}
+	  
     </div>
   );
 }
