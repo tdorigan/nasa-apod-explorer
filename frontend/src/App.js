@@ -81,10 +81,14 @@ function App() {
 		) : (
 		  <div style={{ marginTop: '1rem' }}>
 			<p>🚫 This APOD does not contain a valid image or video.</p>
-			<p>Try selecting a more recent date (after 1995).</p>
 		  </div>
 		)}
-
+		
+		{apod.copyright && (
+		  <p style={{ fontStyle: 'italic', fontSize: '0.9rem', color: '#666', marginTop: '0.5rem' }}>
+			© {apod.copyright}
+		  </p>
+		)}
 
       <p>{apod.explanation}</p>
     </div>
