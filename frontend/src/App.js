@@ -7,6 +7,12 @@ function App() {
   const [selectedDate, setSelectedDate] = useState('');
   
   const [showModal, setShowModal] = useState(false);
+	
+  const [darkMode, setDarkMode] = useState(false);
+  
+  useEffect(() => {
+  document.body.className = darkMode ? 'dark' : '';
+}, [darkMode]);
 
   const fetchData = (date = '') => {
     setLoading(true);
@@ -41,7 +47,7 @@ function App() {
 
 	if (loading || !apod) {
 	  return (
-		<div className="App">
+		<div className={`App ${darkMode ? 'dark' : ''}`}>
 		  <p>🚀 Fetching NASA’s space magic...</p>
 		  <p style={{ color: 'gray', fontSize: '0.9rem' }}>
 			If this is your first visit, the API may take up to a minute to wake up. Please be patient.
@@ -51,8 +57,26 @@ function App() {
 	}
 
   return (
-    <div className="App">
+    <div className={`App ${darkMode ? 'dark' : ''}`}>
       <h1>{apod.title}</h1>
+	  
+	  <button
+		  onClick={() => setDarkMode(!darkMode)}
+		  style={{
+			position: 'absolute',
+			top: '1rem',
+			right: '1rem',
+			padding: '0.5rem 1rem',
+			fontSize: '0.9rem',
+			borderRadius: '5px',
+			border: 'none',
+			cursor: 'pointer',
+			backgroundColor: darkMode ? '#444' : '#ddd',
+			color: darkMode ? '#fff' : '#000'
+		  }}
+		>
+		  {darkMode ? '☀️ Light Mode' : '🌙 Dark Mode'}
+		</button>
       
       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: '1rem' }}>
 		  <label htmlFor="date">Select a date:</label>

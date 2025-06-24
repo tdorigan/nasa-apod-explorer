@@ -1,3 +1,14 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  transition: background-color 0.3s ease;
+}
+
+body.dark {
+  background-color: #121212;
+}
+
 .App {
   max-width: 800px;
   margin: 0 auto;
@@ -36,3 +47,21 @@ p {
   line-height: 1.6;
   color: #333;
 }
+
+/* Dark Mode Styles */
+.App.dark {
+  background-color: #121212;
+  color: #f0f0f0;
+}
+
+.App.dark input[type="date"],
+.App.dark button {
+  background-color: #333;
+  color: #f0f0f0;
+  border: 1px solid #888;
+}
+
+.App.dark p {
+  color: #ccc;
+}
+
