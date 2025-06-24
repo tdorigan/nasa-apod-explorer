@@ -37,13 +37,16 @@ function App() {
     fetchData(date);
   };
 
-  if (loading || !apod) {
-    return (
-      <div className="App">
-        <p>🚀 Fetching NASA’s space magic...</p>
-      </div>
-    );
-  }
+	if (loading || !apod) {
+	  return (
+		<div className="App">
+		  <p>🚀 Fetching NASA’s space magic...</p>
+		  <p style={{ color: 'gray', fontSize: '0.9rem' }}>
+			If this is your first visit, the API may take up to a minute to wake up. Please be patient.
+		  </p>
+		</div>
+	  );
+	}
 
   return (
     <div className="App">
