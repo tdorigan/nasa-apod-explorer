@@ -4,7 +4,8 @@ import './App.css';
 function App() {
   const [apod, setApod] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [selectedDate, setSelectedDate] = useState('');
+  const today = new Date().toISOString().split("T")[0];
+  const [selectedDate, setSelectedDate] = useState(today);
   
   const [showModal, setShowModal] = useState(false);
 	
@@ -36,7 +37,7 @@ function App() {
   };
 
   useEffect(() => {
-    fetchData();
+    fetchData(selectedDate);
   }, []);
 
   const handleDateChange = (e) => {
