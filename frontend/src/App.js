@@ -63,6 +63,10 @@ function App() {
     <div className={`App ${darkMode ? 'dark' : ''}`}>
       <h1 style={{ marginBottom: '0.5rem' }}>🌌 Astronomy Picture of the Day</h1>
 
+      <p style={{ maxWidth: '700px', margin: '0 auto 1rem', fontSize: '1rem', color: '#555' }}>
+        Discover the universe! Each day NASA shares a stunning image or video of space, along with a brief explanation written by a professional astronomer.
+      </p>
+      
       <h2>{apod.title}</h2>
 	  
 	  <button

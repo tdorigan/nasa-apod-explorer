@@ -51,6 +51,10 @@ function MarsRoverPhotos() {
     <div style={{ padding: '1rem' }}>
       <h1 style={{ marginBottom: '0.5rem' }}>📸 Mars Rover Image Viewer</h1>
 
+      <p style={{ maxWidth: '700px', margin: '0 auto 1rem', fontSize: '1rem', color: '#555' }}>
+        Explore raw images captured on the surface of Mars by NASA's Curiosity rover. Choose a date to see what the rover saw that day!
+      </p>
+
       <h2>🚜 Mars Rover Photos – {date}</h2>
 
       <input
