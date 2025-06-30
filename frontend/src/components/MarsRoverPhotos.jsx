@@ -19,7 +19,8 @@ function MarsRoverPhotos() {
       setCurrentPage(1); // reset to first page on date change
 
       try {
-        const res = await fetch(`/api/mars/photos?earth_date=${date}`);
+        const apiBase = process.env.REACT_APP_API_URL;
+        const res = await fetch(`${apiBase}/api/mars/photos?earth_date=${date}`);
         const data = await res.json();
         setPhotos(data.photos);
       } catch (err) {
