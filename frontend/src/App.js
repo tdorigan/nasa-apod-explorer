@@ -1,3 +1,5 @@
+import MarsRoverPhotos from './components/MarsRoverPhotos';
+
 import React, { useEffect, useState } from 'react';
 import './App.css';
 
@@ -17,7 +19,7 @@ function App() {
 
   const fetchData = (date = '') => {
     setLoading(true);
-    let url = 'https://nasa-apod-explorer-o7hp.onrender.com/api/apod';
+    let url = `${process.env.REACT_APP_API_URL}/api/apod`;
     if (date) {
       url += `?date=${date}`;
     }
@@ -59,7 +61,9 @@ function App() {
 
   return (
     <div className={`App ${darkMode ? 'dark' : ''}`}>
-      <h1>{apod.title}</h1>
+      <h1 style={{ marginBottom: '0.5rem' }}>🌌 Astronomy Picture of the Day</h1>
+
+      <h2>{apod.title}</h2>
 	  
 	  <button
 		  onClick={() => setDarkMode(!darkMode)}
@@ -156,6 +160,9 @@ function App() {
       </div>
     )}
 	  
+    <hr style={{ margin: '2rem 0' }} />
+    <MarsRoverPhotos />
+
     </div>
   );
 }

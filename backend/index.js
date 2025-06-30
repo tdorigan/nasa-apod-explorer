@@ -1,3 +1,5 @@
+const marsRoutes = require('./routes/mars');
+
 const express = require('express');
 const axios = require('axios');
 const cors = require('cors');
@@ -7,6 +9,8 @@ const app = express();
 app.use(cors({
   origin: ['http://localhost:3000', 'https://nasa-apod-explorer-green.vercel.app']
 }));
+
+app.use('/api/mars', marsRoutes);
 
 const PORT = process.env.PORT || 5000;
 
