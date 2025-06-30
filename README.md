@@ -1,32 +1,77 @@
-# 🌌 NASA APOD Explorer
+# 🌌 NASA Explorer
 
-A full-stack web application that allows users to explore NASA's Astronomy Picture of the Day (APOD) by selecting a date. Built with React and Node.js using NASA's public API.
+A full-stack web application that allows users to explore NASA's Astronomy Picture of the Day (APOD) and browse Mars Rover surface images by selecting an Earth date. Built with React and Node.js using NASA's public APIs.
 
 ## 🚀 Live Demo
 
 - 🔗 Frontend: https://nasa-apod-explorer-green.vercel.app
-- 🔗 Backend API: https://nasa-apod-explorer-o7hp.onrender.com/api/apod
+- 🔗 Backend API: https://nasa-apod-explorer-o7hp.onrender.com
 
 ## 🛠️ Tech Stack
 
 - **Frontend**: React (Create React App)
 - **Backend**: Node.js + Express
-- **API**: [NASA APOD API](https://api.nasa.gov/)
+- **APIs**: [NASA APOD API](https://api.nasa.gov/) & [Mars Rover Photos API](https://api.nasa.gov/)
 - **Deployment**: Vercel (frontend), Render (backend)
 
 ## 📂 Folder Structure
 
-- `backend/` – Node.js + Express API
+- `backend/` – Node.js + Express API server
 - `frontend/` – React application
 - `README.md` – Project overview
 
 ## 🔧 Features
 
-- Date selector to fetch APOD for any day
-- Displays image or embedded video with description
-- Fallback message for unsupported or missing media
-- Responsive design with basic styling
-- Graceful error handling and loading states
+### 🌌 Astronomy Picture of the Day (APOD)
+
+- Date picker to view APOD from any date since 1995
+- Displays image or embedded video with title and explanation
+- Full-screen view of HD images
+- Handles missing media or API errors gracefully
+
+### 📸 Mars Rover Image Viewer
+
+- Choose an Earth date to view raw photos from NASA’s **Curiosity Rover**
+- Supports pagination for days with many images
+- Click on any image to view it in full-screen mode
+- Persists last selected date using localStorage
+
+### 🌓 UI Features
+
+- Light/Dark mode toggle
+- Responsive layout for desktop and mobile devices
+- Friendly loading states and error messages
+
+## 🧪 Local Development Setup
+
+1. **Clone the repository**
+
+2. **Create a `.env` file** in the `frontend/` folder with the following content:
+
+   ```env
+   REACT_APP_API_URL=http://localhost:5000
+   ```
+
+3. **Start the backend**
+
+   ```bash
+   cd backend
+   npm install
+   node index.js
+   ```
+
+4. **Start the frontend**
+
+   ```bash
+   cd frontend
+   npm install
+   npm start
+   ```
+
+5. Open your browser at:
+   ```
+   http://localhost:3000
+   ```
 
 ## 📄 License
 
