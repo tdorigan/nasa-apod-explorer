@@ -47,21 +47,34 @@ A full-stack web application that allows users to explore NASA's Astronomy Pictu
 
 1. **Clone the repository**
 
-2. **Create a `.env` file** in the `frontend/` folder with the following content:
+   ```bash
+   git clone https://github.com/tdorigan/nasa-apod-explorer.git
+   cd nasa-apod-explorer
+   ```
+
+2. **Create a `.env` file** in the `backend/` folder with the following content:
+
+   ```env
+   NASA_API_KEY=your_nasa_api_key_here
+   ```
+
+3. **Create a `.env` file** in the `frontend/` folder with the following content:
 
    ```env
    REACT_APP_API_URL=http://localhost:5000
    ```
 
-3. **Start the backend**
+4. **Start the backend**
 
    ```bash
    cd backend
    npm install
-   node index.js
+   npm start
    ```
 
-4. **Start the frontend**
+5. **Start the frontend**
+
+   Open a new terminal and run:
 
    ```bash
    cd frontend
@@ -69,7 +82,8 @@ A full-stack web application that allows users to explore NASA's Astronomy Pictu
    npm start
    ```
 
-5. Open your browser at:
+6. Open your browser at:
+
    ```
    http://localhost:3000
    ```
