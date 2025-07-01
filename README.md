@@ -5,7 +5,8 @@ A full-stack web application that allows users to explore NASA's Astronomy Pictu
 ## 🚀 Live Demo
 
 - 🔗 Frontend: https://nasa-apod-explorer-green.vercel.app
-- 🔗 Backend API: https://nasa-apod-explorer-o7hp.onrender.com
+- 🔗 Backend API (APOD): https://nasa-apod-explorer-o7hp.onrender.com/api/apod
+- 🔗 Backend API (Mars): https://nasa-apod-explorer-o7hp.onrender.com/api/mars/photos?earth_date=2015-06-03
 
 ## 🛠️ Tech Stack
 
